@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript">
+    function openIos(){
+
+      window.open("Apple.html", "newwindow", "height=200, width=400,left=100,top=100, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")
+    }
+
+    function openGoogle(){
+
+      window.open("Google.html", "newwindow", "height=200, width=400,left=100,top=100, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no")
+    }
+  </script>
+  <style media="screen">
+    body {
+      position: absolute;
+      top: 0;
+      bottom: 100px;
+      left: 80px;
+      margin: auto;
+      //background-color: red
+    }
+    #div1 {
+      position: relative;
+      height: 50%;
+      //background-color: pink;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #div2 {
+      position: relative;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+  <title>Document</title>
+</head>
+<body>
+    <div id='div1'>
+      <img src="../icon/app store.png" alt="screen"  height="80" onclick="openIos()">
+    </div>
+    <div id='div2'>
+      <img src="../icon/google play.png" alt="screen"  height="80" onclick="openGoogle()">
+    </div>
+</body>
+</html>

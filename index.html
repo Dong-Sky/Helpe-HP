@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+  <link rel="stylesheet" href="./css/index.css" type="text/css" >
+  <script type="text/javascript">
+
+    var leftIframe = null;
+    var timer = null;
+    var index = 0;
+
+    window.onload = function(){
+      var menuChildren = document.querySelector('#right-menu').getElementsByTagName('td');
+      var len = menuChildren.length;
+      var swiper = document.getElementById('swiper');
+      swiper.children[0].className = 'choosed';
+
+      for(var i=0;i<len;i++){
+        menuChildren[i].onclick = clickMenuChild;
+      }
+
+      window.leftIframe = document.getElementById('left-main').children[0];
+      window.leftIframe.src = './page/Home.html';
+
+      timer = setInterval(function(){
+        swiperScreen()
+      },7000)
+
+    }
+
+    function clickMenuChild(e){
+
+      var menuChildren = document.querySelector('#right-menu').getElementsByTagName('td');
+      var pages = document.getElementsByClassName('left-screen');
+      var len = menuChildren.length;
+
+      for(var i=0;i<len;i++){
+        if(i == e.target.dataset.index){
+          pages[i].className = 'left-screen active';
+          menuChildren[i].className = 'menu-child choosed';
+        }
+        else{
+          pages[i].className = 'left-screen';
+          menuChildren[i].className = 'menu-child';
+
+        }
+      }
+    }
+
+    function focusMenuChild(){
+      console.log(event);
+    }
+
+    function blurMenuChild(){
+      console.log(event.target);
+    }
+
+    function swiperScreen(){
+      var ul = document.getElementById('screen-ul');
+      var speed = -30;
+      var finalTop = ul.offsetTop-458;
+      console.log(finalTop);
+
+      index++;
+      if(index < 4){
+        document.getElementById('swiper').children[index-1].className = '';
+        document.getElementById('swiper').children[index].className = 'choosed';
+      }
+
+
+      var swipetimer = setInterval(function(){
+        if(Math.abs(ul.offsetTop+speed) < Math.abs(finalTop)){
+
+          ul.style.top = (parseInt(ul.offsetTop)+speed)+'px';
+
+
+        }
+        else {
+          ul.style.top = finalTop+'px';
+
+          clearInterval(swipetimer)
+          if(index == 4) {
+            ul.style.top = 0;
+            console.log(ul.style.top);
+            document.getElementById('swiper').children[3].className = '';
+            document.getElementById('swiper').children[0].className = 'choosed';
+
+            index = 0;
+
+          }
+
+        }
+
+      },100)
+    }
+  </script>
+
+</head>
+<body>
+
+  <div id='header'>
+    <div id='header-left'>
+        <img id='left-img' src="icon/HelpM .png"  alt="HelpM" width='160' height="40"/>
+        <div id='left-main'>
+          <div class='left-screen active'>
+            <img src="./icon/title.png" alt="screen" height="40" style="">
+            <br>
+            <br>
+            <p style="font-size: 16px">
+            </p>
+          </div>
+          <div class='left-screen'>
+            <p>
+              <img src="./icon/aboutme1.png" alt="screen" width="40" height="40">
+              一个始于留学生的尝试
+
+
+            </p>
+            <p>
+              <img src="./icon/aboutme2.png" alt="screen" width="40" height="40">
+              一个基于信任的交流方式
+
+
+            </p>
+            <p>
+              <img src="./icon/aboutme3.png" alt="screen" width="40" height="40">
+              一个服务在日华人的交易平台
+
+
+            </p>
+            <p>
+              <img src="./icon/aboutme4.png" alt="screen" width="40" height="40">
+              一个提供你所需资讯的信息中心
+
+            </p>
+          </div>
+          <div class='left-screen'>
+            <div id='div1'>
+              <img src="./icon/app store.png" alt="screen"  height="80" onclick="alert('App上架审核中!')">
+            </div>
+            <div id='div2'>
+              <img src="./icon/google play.png" alt="screen"  height="80" onclick="alert('App上架审核中!')">
+            </div>
+          </div>
+          <div class='left-screen'>
+            <img src="./icon/mail.png" alt="screen" height="60" style="margin-right: 10px;"><strong>helpe.official@gmail.com</strong>
+          </div>
+        </div>
+    </div>
+    <div id='header-right'>
+
+
+
+      <table id='right-menu' cellspacing="10px">
+        <tr>
+          <td class='menu-child choosed' data-index='0'>Home</td>
+          <td class='menu-child' data-index='1'>About Us</td>
+          <td class='menu-child' data-index='2'>Join Us</td>
+          <td class='menu-child' data-index='3'>Contact</td>
+        </tr>
+      </table>
+      <div id="right-main">
+        <img id='iphone' src="./icon/Iphone.png" alt="screen" width="300" height="600">
+          <!--
+          <img id='screen' src="icon/screen.png" alt="screen" width="260" height="520">
+        -->
+        </img>
+        <div id='screen'>
+          <ul id='screen-ul'>
+            <li><img src="./icon/screen1.png" alt="screen" width="256" height="458"></li>
+            <li><img src="./icon/screen2.png" alt="screen" width="256" height="458"></li>
+            <li><img src="./icon/screen3.png" alt="screen" width="256" height="458"></li>
+            <li><img src="./icon/screen4.png" alt="screen" width="256" height="458"></li>
+            <li><img src="./icon/screen1.png" alt="screen" width="256" height="458"></li>
+
+          </div>
+
+        </div>
+
+        <ul id='swiper'>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

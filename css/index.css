@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #f2f2f2;
+}
+
+#header{
+  height: 900px;
+  //background-color: red;
+}
+
+#header-left{
+  float: left;
+  width: 33%;
+  height: 100%;
+  //background-color: #f2f2f2;
+  position: relative;
+  overflow: visible;
+}
+
+#left-img{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#left-main{
+  position: absolute;
+  //background-color: pink;
+  top: 100px;
+  height: 200px;
+  width: 600px;
+  margin-left: 50px;
+  margin-top: 200px;
+  font-size: 40px;
+  z-index: 999;
+}
+
+#header-right{
+  float: left;
+  height: 100%;
+  width: 67%;
+  background: #f2f2f2 url('../icon/background.png');
+  position: relative;
+}
+
+#right-menu{
+
+  width: 80%;
+  position: absolute;
+  left: 15%;
+  justify-content: space-between;
+
+}
+
+#right-main{
+  position: absolute;
+  //background-color: pink;
+  height: 100%;
+  width: 100%;
+  top: 100px;
+}
+
+
+#right-menu tr{
+  //background-color: blue;
+}
+#right-menu td{
+  font-size: 20px;
+  color: #ffffff;
+  font-family: sans-serif;
+  //background: orange;
+  text-align: center;
+  //border:2px solid #ffffff;
+}
+
+#footer{
+  background-color: blue;
+  height: 100px
+}
+
+img {
+  //background-color: #ffffff;
+
+}
+
+#iphone {
+  position: absolute;
+  overflow: hidden;
+  margin: auto;
+  top: 40px;
+  z-index: 990;
+  left: 0;
+  right: 0;
+  margin: auto;
+  //display: none
+}
+
+#screen {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 106px;
+  margin: auto;
+  //background-color: blue;
+  height: 458px;
+  width: 256px;
+  border:5px solid #f2f2f2;
+  overflow: hidden;
+}
+
+#screen img {
+  position: relative;
+
+}
+
+#screen ul {
+  font-size: 0;
+  display: inline-block;
+  height: 2290px;
+  position: relative;
+  top: 0;
+}
+
+#screen li {
+  float: top;
+  height: 458px;
+  list-style-type: none
+}
+
+#right-menu .choosed {
+  border: 2px solid #ffffff
+}
+
+#swiper {
+  position: absolute;
+  top: 360px;
+  left: 630px;
+  color: white
+}
+
+.choosed {
+  color: gray
+}
+
+.left-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+#div1 {
+  position: relative;
+  height: 50%;
+  //background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#div2 {
+  position: relative;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  vertical-align: middle;
+}
+
+p {
+  font-size: 24px;
+  color: #fd586d
+}
+
+strong{
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 5px;
+}
